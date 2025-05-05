@@ -11,7 +11,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     align-items: flex-start;
   }
   
@@ -25,6 +25,7 @@
   .contact h4 {
     margin-bottom: 8px;
     font-size: 16px;
+    font-weight: 600;
   }
   
   .newsletter p,
@@ -32,12 +33,14 @@
   .contact small {
     margin-bottom: 6px;
     line-height: 1.6;
+    color: #cccccc;
   }
   
   .inputGroup {
     display: flex;
-    gap: 8px;
+    gap: 0;
     margin-top: 10px;
+    width: 100%;
   }
   
   .inputGroup input {
@@ -45,6 +48,7 @@
     flex: 1;
     border: none;
     font-size: 14px;
+    border-radius: 4px 0 0 4px;
   }
   
   .inputGroup button {
@@ -54,47 +58,29 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 0 4px 4px 0;
   }
   
-  /* Bottom section with fixed column widths */
+  /* Bottom section */
   .bottomSection {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-right: -20px;
-    gap:250px;
-    padding-top: 20px;
+    gap: 64px;
+    margin-top: 32px;
+    padding-top: 24px;
     border-top: 1px solid #444;
-    position: relative; /* Add this for positioning context */
   }
   
-  /* First column - mettä muse */
-  .bottomSection > div:nth-child(1) {
-    width: 180px;
-    min-width: 180px;
-    margin-right: 80px;
-    margin-bottom: 20px;
-  }
-  
-  /* Second column - QUICK LINKS */
-  .bottomSection > div:nth-child(2) {
-    width: 180px;
-    min-width: 180px;
-    margin-right: 80px;
-    margin-bottom: 20px;
-  }
-  
-  /* Third column - FOLLOW US */
-  .bottomSection > div:nth-child(3) {
-    width: 180px;
-    min-width: 180px;
-    margin-bottom: 20px;
+  .bottomSection > div {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
   }
   
   .bottomSection h4 {
-    margin-bottom: 10px;
     font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 600;
   }
   
   .bottomSection ul {
@@ -105,7 +91,13 @@
   
   .bottomSection li {
     margin-bottom: 6px;
+    color: #cccccc;
     cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .bottomSection li:hover {
+    color: #ffffff;
   }
   
   .socialIcons {
@@ -115,8 +107,19 @@
     font-size: 18px;
   }
   
+  .socialIcons a {
+    color: white;
+    transition: color 0.2s;
+  }
+  
+  .socialIcons a:hover {
+    color: #aaa;
+  }
+  
   .paymentImage img {
-    margin-top: 4px;
+    height: 35px;
+    width: auto;
+    margin: 4px 6px;
   }
   
   .copyright {
@@ -125,28 +128,29 @@
     font-size: 12px;
     color: #aaa;
   }
+  
+  /* Responsive */
   @media (max-width: 768px) {
     .topSection,
     .bottomSection {
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      text-align: center;
+      gap: 32px;
     }
   
     .inputGroup {
       flex-direction: column;
-      width: 100%;
     }
   
     .inputGroup input,
     .inputGroup button {
       width: 100%;
+      border-radius: 4px;
     }
   
     .bottomSection > div {
-      width: 100%;
-      text-align: center;
-      margin-right: 0;
+      max-width: 100%;
     }
   
     .socialIcons {
@@ -154,7 +158,7 @@
     }
   
     .footer {
-      padding: 24px 16px;
+      padding: 32px 16px;
     }
   }
   
