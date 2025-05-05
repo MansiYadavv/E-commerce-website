@@ -1,0 +1,46 @@
+.sidebar {
+    width: 300px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: 'Simplon Norm', sans-serif;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .groupTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  
+  .option {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+  
+  .option input {
+    margin-right: 8px;
+  }
+  

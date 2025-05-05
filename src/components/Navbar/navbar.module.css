@@ -1,0 +1,133 @@
+/* Base Styles */
+.topStrip {
+    background-color: #000;
+    height: 40px;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    height: 55px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menuIcon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+ 
+    .logoImage {
+        width: 36px;      /* Closest practical round value */
+        height: 20px;
+        object-fit: contain;
+      }
+      
+  
+  
+  .navCenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+    white-space: nowrap;
+  }
+  
+  .navRight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  
+  .navIcon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .langButton {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0 12px;
+    }
+  
+    .navLeft {
+      gap: 10px;
+    }
+  
+    .navRight {
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  
+    .logoImage {
+      height: 22px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 576px) {
+    .navbar {
+      padding: 0 10px;
+    }
+  
+    .menuIcon {
+      font-size: 18px;
+    }
+  
+    .navCenter {
+      font-size: 16px;
+    }
+  
+    .navIcon {
+      font-size: 16px;
+    }
+  
+    .langButton {
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+  }
+  
+  /* Very Small Devices */
+  @media (max-width: 375px) {
+    .navRight {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .langButton {
+      padding: 2px 4px;
+    }
+  }
+  

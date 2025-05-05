@@ -1,0 +1,32 @@
+.heroSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitleWrapper {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .subtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.4;
+    word-break: break-word;
+    margin: 0;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  
