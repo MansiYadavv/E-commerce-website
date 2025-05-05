@@ -1,7 +1,6 @@
-
 import { useRouter } from 'next/router';
 import styles from '../../FrontendStyle/authForm.module.css';
-import { useState} from 'react';
+import { useState } from 'react';
 
 export default function Login() {
   const router = useRouter();
@@ -13,30 +12,34 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-
-      let data = {};
-      try {
-        data = await res.json();
-      } catch (jsonError) {
-        console.error('Failed to parse JSON:', jsonError);
-      }
-
-      if (res.ok) {
-        alert('Login successful');
+    fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form),
+    })
+      .then(response => {
+        if (!response.ok) {
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            return response.json().then(err => Promise.reject(err));
+          } else {
+            return response.text().then(text =>
+              Promise.reject(new Error(`Server error ${response.status}: ${text.substring(0, 100)}...`))
+            );
+          }
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Login successful:', data);
         router.push('/');
-      } else {
-        alert(data?.error || 'Login failed');
-      }
-    } catch (err) {
-      alert('Something went wrong. Please try again.');
-      console.error('Login error:', err);
-    }
+      })
+      .catch(error => {
+        console.error('Login error:', error.message || error);
+        // You can add a UI element to show error if needed
+      });
   };
 
   return (
