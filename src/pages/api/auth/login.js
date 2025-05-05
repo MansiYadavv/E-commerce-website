@@ -2,7 +2,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import * as cookie from 'cookie'; 
-import User from '../../../../models/user';
+import User from '../../../../../myshopping-list/models/user';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
