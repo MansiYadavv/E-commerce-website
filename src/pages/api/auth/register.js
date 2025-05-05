@@ -1,7 +1,7 @@
 import connectDB from '../connectDB';
 import bcrypt from 'bcryptjs';
 import User from '../../../../models/user';
-import cookie from 'cookie'; // only if you're setting cookies
+import * as cookie from 'cookie'; 
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
